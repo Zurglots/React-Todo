@@ -18,7 +18,7 @@ class TodoForm extends React.Component {
   };
 
   render() {
-    console.log(this.props.name);
+    // console.log(this.props.name);
     return (
       <form onSubmit={this.submitItem}>
         {/* Event - onChange */}
