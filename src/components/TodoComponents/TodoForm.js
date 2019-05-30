@@ -20,17 +20,19 @@ class TodoForm extends React.Component {
   render() {
     // console.log(this.props.name);
     return (
-      <form onSubmit={this.submitItem}>
-        {/* Event - onChange */}
-        <input
-          placeholder="Enter a to do!"
-          onChange={this.handleChanges}
-          value={this.state.task}
-          name="task"
-        />
-        <button>Add Task</button>
-        <button>Clear Completed Tasks</button>
-      </form>
+      <div>
+        <form onSubmit={this.submitItem}>
+          {/* Event - onChange */}
+          <input
+            placeholder="Enter a to do!"
+            onChange={this.handleChanges}
+            value={this.state.task}
+            name="task"
+          />
+          <button>Add Task</button>
+          <button onClick={this.props.remove}>Clear Completed Tasks</button>
+        </form>
+      </div>
     );
   }
 }

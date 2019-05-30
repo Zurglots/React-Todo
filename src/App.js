@@ -28,6 +28,15 @@ class App extends React.Component {
     });
   };
 
+  // remove completed
+  removeCompleted = e => {
+    e.preventDefault();
+    let newData = this.state.listData.filter(todo => !todo.completed);
+    this.setState({
+      listData: newData
+    });
+  };
+
   // a function creating a new object, it's assigning the key value 'task' to the parameter 'task'
   addItem = task => {
     const newItem = {
@@ -47,7 +56,7 @@ class App extends React.Component {
       <div>
         <h2>Get to Work!</h2>
         <TodoList tasks={this.state.listData} toggleItem={this.toggleItem} />
-        <TodoForm add={this.addItem} name="ben" />
+        <TodoForm add={this.addItem} name="ben" remove={this.removeCompleted} />
       </div>
     );
   }
